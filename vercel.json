@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "redploy-alumni-management",
   "builds": [
     {
       "src": "client/package.json",
@@ -11,10 +10,7 @@
     },
     {
       "src": "server/server.js",
-      "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "50mb"
-      }
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -29,8 +25,5 @@
       "src": "/(.*)",
       "dest": "/client/dist/index.html"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 }
