@@ -54,7 +54,8 @@ const Login = () => {
     try {
       console.log('Attempting login with:', { email: formData.email });
       
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      // Use relative URL for API calls - Vite proxy will handle in dev, Vercel will route in production
+      const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
